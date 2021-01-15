@@ -17,7 +17,13 @@
 		</ul>
 		<span class="navbar-text">
 			<form class="form-inline" method="post">
-				<c:if test="${50>10 }" var="variable">
+			
+			
+				<input class="form-control mr-sm-2" type="search"
+					placeholder="Search" aria-label="Search" style="width: auto; mix-width: 40em;">
+					
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				<c:if test="${50<10 }" var="variable">
 
 					<label class="btn btn-outline-success my-2 my-sm-0"
 						style="border: 0px; color: white">Non du connecté

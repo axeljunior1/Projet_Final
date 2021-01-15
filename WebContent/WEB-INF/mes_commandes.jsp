@@ -22,11 +22,6 @@
 			<div class="card-header bg-transparent border-success">
 					
 			</div>
-<div class="container" id="container">
-
-	
-	
-</div>
 
 
 		</div>

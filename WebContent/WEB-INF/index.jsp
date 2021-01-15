@@ -20,7 +20,6 @@
 	<div class="container">
 		<div class="jumbotron" style="padding-top: 0px;">
 			<div class="card-header bg-transparent border-success" style="margin:-2em; margin-top: -0.7em; margin-bottom: -1em" >
-				<%@ include file="includes/NavBarCompte.jsp"%> 
 			</div>
 			<div style="margin-top: 2em">
 			<p class="lead">This is a simple hero unit, a simple
