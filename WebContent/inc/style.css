@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+h1 {
+	
+	margin: 150px;
+	color: red;
+	text-decoration: underline;
+}
+
+
+body, p, legend, label, input {
+    font: normal 8pt verdana, helvetica, sans-serif;
+    color: green;
+}
