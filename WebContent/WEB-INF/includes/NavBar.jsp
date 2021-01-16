@@ -15,14 +15,13 @@
 				href="./mes_informations">Mes Informations</a></li>
 			<li class="nav-item"><a class="nav-link" href="./mes_messages">Mes messages</a></li>
 		</ul>
-		<span class="navbar-text">
 			<form class="form-inline" method="post">
 			
 			
 				<input class="form-control mr-sm-2" type="search"
-					placeholder="Search" aria-label="Search" style="width: auto; mix-width: 40em;">
+					placeholder="Search" aria-label="Search" style="width: auto; mix-width: 40em; border-radius: 50px;">
 					
-				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="border-radius: 50px;">Search</button>
 				<c:if test="${50<10 }" var="variable">
 
 					<label class="btn btn-outline-success my-2 my-sm-0"
@@ -33,10 +32,15 @@
 
 
 			</form>
-		</span> <a href="./connexion">
+			<c:if test="${empty s1 }" ><a href="./connexion">
 			<button class="btn btn-outline-success my-2 my-sm-0"
-				style="margin-left: 10px">Connexion</button>
-		</a>
+				style="margin-left: 10px">${s}<c:if test="${ empty s }">Connexion</c:if></button>
+		</a></c:if>
+		<c:if test="${! empty s1 }" ><a href="${s1}">
+			<button class="btn btn-outline-success my-2 my-sm-0"
+				style="margin-left: 10px">${s}<c:if test="${ empty s }">Connexion</c:if></button>
+		</a></c:if>
+		 
 
 	</div>
 	<div>

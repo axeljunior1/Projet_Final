@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%
+	String s = "Se Connecter";
+String s1 = "./connexion";
+String s2 = "inscription";
+	request.setAttribute("s", s);
+	request.setAttribute("s1", s1);
+	request.setAttribute("s2", s2);
+%>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>${s2 }</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -15,9 +23,9 @@
 	<%@ include file="includes/NavBar.jsp"%>
 
 	<div></div>
-	<div class="container" style="min-height: 100px;">
-		<div class="jumbotron" style="min-height: 100px;">
-			<div class="card-header bg-transparent border-success">
+	<div class="container">
+		<div class="jumbotron" style="padding-top: 0px;">
+			<div class="card-header bg-transparent border-success"  >
 					
 			</div>
 <div class="container" id="container">

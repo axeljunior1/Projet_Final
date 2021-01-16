@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%
+	String s = "S'inscrire";
+String s1 = "./inscription";
+String s2 = "Se Connecter";
+	request.setAttribute("s", s);
+	request.setAttribute("s1", s1);
+	request.setAttribute("s2", s2);
+%>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link rel="stylesheet"
@@ -16,9 +24,8 @@
 
 	<%@ include file="includes/NavBar.jsp"%>
 
-	<div></div>
 	<div class="container" style="min-height: 100px;">
-		<div class="jumbotron" style="min-height: 100px;">
+		<div class="jumbotron" style="padding-top: 0px;">
 			<div class="card-header bg-transparent border-success">
 					
 			</div>

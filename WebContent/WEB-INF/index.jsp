@@ -1,18 +1,32 @@
 
+
+
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<%
+	String s = "Connexion";
+String s1 = "./connexion";
+String s2 = "Se Connecter";
+	request.setAttribute("s", s);
+	request.setAttribute("s1", s1);
+	request.setAttribute("s2", s2);
+%>
+<title>${s}</title>
+
+
+
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
 
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/styles/cssMenuDeroulant.css" />
 
 	
 </head>
 <body>
+	
+	
 
 	<%@ include file="includes/NavBar.jsp"%>
 
@@ -22,7 +36,8 @@
 			<div class="card-header bg-transparent border-success" style="margin:-2em; margin-top: -0.7em; margin-bottom: -1em" >
 			</div>
 			<div style="margin-top: 2em">
-			<p class="lead">This is a simple hero unit, a simple
+			<p class="lead"> 
+			${s} This is a simple hero unit, a simple
 				jumbotron-style component for calling extra attention to featured
 				content or information.</p>
 				<a href="/Projet_4A_Sys_Dis/connexion"> lien de connexion</a>
