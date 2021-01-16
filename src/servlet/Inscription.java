@@ -8,7 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import beans.B_inscription;
+import beans.Utilisateur;
+import database.Db_utilisateur;
 
 /**
  * Servlet implementation class Inscription
@@ -37,8 +38,13 @@ public class Inscription extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+		
+		
+		
 
-		B_inscription b_inscription = new B_inscription();
+		Utilisateur b_inscription = new Utilisateur();
 		
 		String firstName=request.getParameter("firstName");
 		String lastName=request.getParameter("lastName");
@@ -51,6 +57,10 @@ public class Inscription extends HttpServlet {
 		b_inscription.setEmail(email);
 		b_inscription.setPassword(password);
 		b_inscription.setConfirmPassword(confirmPassword);
+		b_inscription.setPseudo("pseudo");
+		
+		Db_utilisateur db_utilisateur = new Db_utilisateur();
+		db_utilisateur.addUser(b_inscription);
 		
 		HttpSession session = request.getSession();
 		

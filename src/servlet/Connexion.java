@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.B_connexion;
+import beans.Utilisateur;
+import database.Db_utilisateur;
 
 /**
  * Servlet implementation class Connexion
@@ -27,6 +29,18 @@ public class Connexion extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Utilisateur utilisateur = new Utilisateur() ; 
+		
+		utilisateur.setFirstName("junior");
+		utilisateur.setLastName("axelsdks");
+		utilisateur.setEmail("fdfd@df");
+		utilisateur.setPassword("menguedsfd");
+		utilisateur.setConfirmPassword("menguedsfd");
+		utilisateur.setPseudo("pseudo");
+		
+		Db_utilisateur db_utilisateur = new Db_utilisateur();
+		db_utilisateur.addUser(utilisateur);
+		
 		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/connexion.jsp").forward(request, response);
 	}

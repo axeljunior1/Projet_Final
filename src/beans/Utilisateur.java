@@ -1,6 +1,6 @@
 package beans;
 
-public class B_inscription {
+public class Utilisateur {
 
 
 	private String firstName ;
@@ -8,6 +8,7 @@ public class B_inscription {
 	private String email ;
 	private String password ;
 	private String ConfirmPassword ;
+	private String pseudo;
 	public String getFirstName() {
 		return firstName;
 	}
@@ -23,8 +24,8 @@ public class B_inscription {
 	}
 
 
-	public void setLastName(String lasttName) {
-		this.lastName = lasttName;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 
@@ -55,6 +56,16 @@ public class B_inscription {
 
 	public void setConfirmPassword(String confirmPassword) {
 		ConfirmPassword = confirmPassword;
+	}
+
+
+	public String getPseudo() {
+		return pseudo;
+	}
+
+
+	public void setPseudo(String pseudo) {
+		this.pseudo = pseudo;
 	}
 	
 	
