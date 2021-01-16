@@ -22,10 +22,10 @@
 					placeholder="Search" aria-label="Search" style="width: auto; mix-width: 40em; border-radius: 50px;">
 					
 				<button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="border-radius: 50px;">Search</button>
-				<c:if test="${50<10 }" var="variable">
+				<c:if test="${! empty b_inscription.lastName}" var="variable">
 
 					<label class="btn btn-outline-success my-2 my-sm-0"
-						style="border: 0px; color: white">Non du connecté
+						style="border: 0px; color: white">Bonjour ${b_inscription.lastName } 
 						(${!variable })</label>
 
 				</c:if>

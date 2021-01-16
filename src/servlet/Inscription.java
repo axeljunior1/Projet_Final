@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import beans.B_inscription;
 
@@ -51,7 +52,9 @@ public class Inscription extends HttpServlet {
 		b_inscription.setPassword(password);
 		b_inscription.setConfirmPassword(confirmPassword);
 		
-		request.setAttribute("b_inscription", b_inscription);
+		HttpSession session = request.getSession();
+		
+		session.setAttribute("b_inscription", b_inscription);
 		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/inscription.jsp").forward(request, response);
 	}
