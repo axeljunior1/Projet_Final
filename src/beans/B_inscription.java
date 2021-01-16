@@ -4,7 +4,7 @@ public class B_inscription {
 
 
 	private String firstName ;
-	private String lasttName ;
+	private String lastName ;
 	private String email ;
 	private String password ;
 	private String ConfirmPassword ;
@@ -18,13 +18,13 @@ public class B_inscription {
 	}
 
 
-	public String getLasttName() {
-		return lasttName;
+	public String getLastName() {
+		return lastName;
 	}
 
 
-	public void setLasttName(String lasttName) {
-		this.lasttName = lasttName;
+	public void setLastName(String lasttName) {
+		this.lastName = lasttName;
 	}
 
 

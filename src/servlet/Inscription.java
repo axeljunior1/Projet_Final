@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.B_inscription;
+
 /**
  * Servlet implementation class Inscription
  */
@@ -26,7 +28,7 @@ public class Inscription extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/inscription.jsp").forward(request, response);
 	}
 
@@ -34,8 +36,24 @@ public class Inscription extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+
+		B_inscription b_inscription = new B_inscription();
+		
+		String firstName=request.getParameter("firstName");
+		String lastName=request.getParameter("lastName");
+		String email=request.getParameter("email");
+		String password=request.getParameter("password");
+		String confirmPassword = request.getParameter("confirmPassword");
+		
+		b_inscription.setFirstName(firstName);
+		b_inscription.setLastName(lastName);
+		b_inscription.setEmail(email);
+		b_inscription.setPassword(password);
+		b_inscription.setConfirmPassword(confirmPassword);
+		
+		request.setAttribute("b_inscription", b_inscription);
+		
+		this.getServletContext().getRequestDispatcher("/WEB-INF/inscription.jsp").forward(request, response);
 	}
 
 }

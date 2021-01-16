@@ -45,10 +45,10 @@ public class Connexion extends HttpServlet {
 		System.out.println(password);
 		request.setAttribute("pass", password);
 		
-		if (true) {
+		/*if (false) {
 
 			this.getServletContext().getRequestDispatcher("/WEB-INF/inscription.jsp").forward(request, response);
-		}
+		}*/
 		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/connexion.jsp").forward(request, response);
 	}

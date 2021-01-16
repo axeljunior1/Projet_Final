@@ -30,14 +30,15 @@ String s2 = "inscription";
 			</div>
 <div class="container" id="container">
 	<div class="form-container sign-in-container">
-		<form action="#" id="form">
+		<form action="inscription" id="form" method="post">
+		<c:if test="${ ! empty b_inscription && b_inscription.lastName!= '' }"> ${b_inscription.lastName} Vous êtes inscrit</c:if>
 			<h1>Sign up</h1>
-			<input type="text" placeholder=" first Name" />
+			<input type="text" name="firstName" placeholder=" first Name" />
 			
-			<input type="text" placeholder=" Last Name" />
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<input type="password" placeholder="Confirm Password" />
+			<input type="text" name="lastName" placeholder=" Last Name" />
+			<input type="email" name="email" placeholder="Email" />
+			<input type="password" name="password" placeholder="Password" />
+			<input type="password" name="confirmPassword" placeholder="Confirm Password" />
 			<a href="./connexion"><span>Sign in</span><br/></a>
 			<button>Sign Up</button>
 		</form>
