@@ -38,7 +38,6 @@ String s2 = "Se Connecter";
 			<input type="password" name="password" placeholder="Password" />
 			<a href="#">Forgot your password?</a>
 			<a href="./inscription"><span>Sign up</span><br/></a>
-			<input type="submit" value="send"/>
 			<button type="submit">Sign In</button>
 		</form>
 	</div>
