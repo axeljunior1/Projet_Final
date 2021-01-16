@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.B_connexion;
+
 /**
  * Servlet implementation class Connexion
  */
@@ -19,14 +21,13 @@ public class Connexion extends HttpServlet {
      */
     public Connexion() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/connexion.jsp").forward(request, response);
 	}
 
@@ -34,8 +35,22 @@ public class Connexion extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		B_connexion b_connexion = new B_connexion();
+		String email= request.getParameter("email");
+		String password= request.getParameter("password");
+		
+		b_connexion.setEmail(email); 
+		b_connexion.setPassword(password);
+		System.out.println(password);
+		request.setAttribute("pass", password);
+		
+		if (true) {
+
+			this.getServletContext().getRequestDispatcher("/WEB-INF/inscription.jsp").forward(request, response);
+		}
+		
+		this.getServletContext().getRequestDispatcher("/WEB-INF/connexion.jsp").forward(request, response);
 	}
 
 }

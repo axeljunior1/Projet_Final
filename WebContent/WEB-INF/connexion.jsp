@@ -31,13 +31,15 @@ String s2 = "Se Connecter";
 			</div>
 <div class="container" id="container">
 	<div class="form-container sign-in-container">
-		<form action="#" id="form">
+		<form action="connexion" id="form" method="post">
+		<c:if test="${ ! empty pass }"> ${pass} Vous êtes connecté</c:if>
 			<h1>Sign in</h1>
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
+			<input type="email" name="email" placeholder="Email" />
+			<input type="password" name="password" placeholder="Password" />
 			<a href="#">Forgot your password?</a>
 			<a href="./inscription"><span>Sign up</span><br/></a>
-			<button>Sign In</button>
+			<input type="submit" value="send"/>
+			<button type="submit">Sign In</button>
 		</form>
 	</div>
 	
