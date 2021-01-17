@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%
+String active = "mes_informations";
+request.setAttribute("active", active);
+%>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link rel="stylesheet"

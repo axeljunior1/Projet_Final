@@ -52,7 +52,6 @@ public class Db_utilisateur {
 
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
 
@@ -61,7 +60,6 @@ public class Db_utilisateur {
 				if (statement!=null) statement.close();
 				if (connexion!=null) connexion.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

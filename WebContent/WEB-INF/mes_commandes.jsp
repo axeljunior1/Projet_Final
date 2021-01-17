@@ -4,6 +4,11 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 
+<%
+String active = "mes_commandes";
+
+request.setAttribute("active", active);
+%>
 
 
 <link rel="stylesheet"

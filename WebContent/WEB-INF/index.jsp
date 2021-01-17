@@ -8,6 +8,7 @@
 	String s = "Connexion";
 String s1 = "./connexion";
 String s2 = "Se Connecter";
+String active = "active";
 	request.setAttribute("s", s);
 	request.setAttribute("s1", s1);
 	request.setAttribute("s2", s2);

@@ -1,4 +1,8 @@
 
+<!--     -->
+
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	<a class="navbar-brand" href="./index" style="margin-right: 50px">E-buy
 		<img alt="not found" src="inc/logo.png"
@@ -11,12 +15,36 @@
 	</button>
 	<div class="collapse navbar-collapse" id="navbarText">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active"><a class="nav-link"
-				href="./mes_commandes">Mes Commandes <span class="sr-only">(current)</span>
-			</a></li>
-			<li class="nav-item"><a class="nav-link"
-				href="./mes_informations">Mes Informations</a></li>
-			<li class="nav-item"><a class="nav-link" href="./mes_messages">Mes
+
+			<c:if test="${active=='mes_commandes'}">
+				<li class="nav-item active">
+			</c:if>
+
+			<c:if test="${! active=='mes_commandes'}">
+				<li class="nav-item">
+			</c:if>
+			<a class="nav-link" href="./mes_commandes"> Mes Commandes <span
+				class="sr-only">(current)</span>
+			</a>
+			</li>
+
+			<c:if test="${active=='mes_informations'}">
+				<li class="nav-item active">
+			</c:if>
+
+			<c:if test="${! active=='mes_informations'}">
+				<li class="nav-item">
+			</c:if>
+			<a class="nav-link" href="./mes_informations">Mes Informations</a>
+			</li>
+
+			<c:if test="${active=='mes_messages'}">
+				<li class="nav-item active">
+			</c:if>
+
+			<c:if test="${! active=='mes_messages'}">
+				<li class="nav-item">
+			</c:if><a class="nav-link" href="./mes_messages">Mes
 					messages</a></li>
 		</ul>
 		<form class="form-inline" method="post">
