@@ -42,7 +42,7 @@
 				<li class="nav-item active">
 			</c:if>
 
-			<c:if test="${! active=='mes_messages*'}">
+			<c:if test="${! active=='mes_messages'}">
 				<li class="nav-item">
 			</c:if><a class="nav-link" href="./mes_messages">Mes
 					messages</a></li>
@@ -56,31 +56,31 @@
 
 			<button class="btn btn-outline-success my-2 my-sm-0" type="submit"
 				style="border-radius: 50px;">Search</button>
-			<c:if test="${! empty b_inscription.lastName}" var="variable">
+			<c:if test="${! empty User.lastName}" var="variable">
 
 				<label class="btn btn-outline-success my-2 my-sm-0"
 					style="border: 0px; color: white">Bonjour
-					${b_inscription.lastName } </label>
+					${User.lastName } </label>
 
 			</c:if>
 
 
 		</form>
-		<c:if test="${empty s1 && empty b_inscription.lastName}">
+		<c:if test="${empty s1 && empty User.lastName}">
 			<a href="./connexion">
 				<button class="btn btn-outline-success my-2 my-sm-0"
-					style="margin-left: 10px">${s}<c:if test="${ empty s && empty b_inscription.lastName}">Connexion</c:if>
+					style="margin-left: 10px">${s}<c:if test="${ empty s && empty User.lastName}">Connexion</c:if>
 				</button>
 			</a>
 		</c:if>
-		<c:if test="${! empty s1 && empty b_inscription.lastName}">
+		<c:if test="${! empty s1 && empty User.lastName}">
 			<a href="${s1}">
 				<button class="btn btn-outline-success my-2 my-sm-0"
-					style="margin-left: 10px">${s}<c:if test="${ empty s && empty b_inscription.lastName }">Connexion</c:if>
+					style="margin-left: 10px">${s}<c:if test="${ empty s && empty User.lastName }">Connexion</c:if>
 				</button>
 			</a>
 		</c:if>
-		<c:if test="${! empty b_inscription.lastName }">
+		<c:if test="${! empty User.lastName }">
 			<form action="deconnexion" method="post">
 				<button class="btn btn-outline-success my-2 my-sm-0"
 					style="margin-left: 10px" type="submit">Déconnexion</button>

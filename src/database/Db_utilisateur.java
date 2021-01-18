@@ -80,6 +80,19 @@ public class Db_utilisateur {
 		return false;
 		
 	}
+	
+	public Utilisateur findUser(Utilisateur utilisateur) {
+		
+		for (Utilisateur user : utilisateurs()) {
+			
+			if (user.getEmail().equals(utilisateur.getEmail()) && user.getPassword().equals(utilisateur.getPassword())) {
+				return user;
+			}
+		}
+		return null;
+	}
+	
+	
 
 	public void addUser( Utilisateur utilisateur) {
 		loadDatabase();

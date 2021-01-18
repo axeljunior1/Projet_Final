@@ -28,7 +28,7 @@ request.setAttribute("s2", s2);
 		<div class="jumbotron" style="padding-top: 0px;">
 			<div class="card-header bg-transparent border-success"></div>
 			
-			<form action="inscription" class="form_connexion" id="form" method="post">
+			<form action="connexion" class="form_connexion" id="form" method="post">
 
 				<h2>Sign in</h2>
 				<c:if test="${! empty erreurs  }">
@@ -45,6 +45,11 @@ request.setAttribute("s2", s2);
 								<span class="erreur">${erreurs['password']}</span>
 							</div>
 						</c:if>
+						<c:if test="${! empty erreurs['notAUser']  }">
+							<div class="col">
+								<span class="erreur">${erreurs['notAUser']}</span>
+							</div>
+						</c:if>
 
 					</div>
 				</c:if>
@@ -56,19 +61,19 @@ request.setAttribute("s2", s2);
 				</p>
 
 				<p type="Mot de passe *:">
-					<input type="password" name="password" id="password" value="" />
+					<input type="password" name="password" id="password" value="<c:out value="${User.password}"/>" />
 				</p>
 				<br>
 
 
 				<div class="row">
 					<div class="col" align="left">
-						<a href="./connexion">
+						<a href="./inscription">
 							<h3>Sign Up</h3>
 						</a>
 					</div>
 					<div class="col">
-						<button>Sign In</button>
+						<button type="submit">Sign In</button>
 					</div>
 				</div>
 			</form>

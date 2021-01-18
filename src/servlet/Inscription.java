@@ -61,7 +61,7 @@ public class Inscription extends HttpServlet {
         
         
 
-		Utilisateur b_inscription = new Utilisateur();
+		Utilisateur User = new Utilisateur();
 
 		String email=request.getParameter(CHAMP_EMAIL);
 		String password=request.getParameter(CHAMP_PASS);
@@ -69,12 +69,12 @@ public class Inscription extends HttpServlet {
 		String lastName=request.getParameter(CHAMP_PRENOM);
 		String confirmPassword = request.getParameter(CHAMP_CONF);
 		
-		b_inscription.setFirstName(firstName);
-		b_inscription.setLastName(lastName);
-		b_inscription.setEmail(email);
-		b_inscription.setPassword(password);
-		b_inscription.setConfirmPassword(confirmPassword);
-		b_inscription.setPseudo("pseudo");
+		User.setFirstName(firstName);
+		User.setLastName(lastName);
+		User.setEmail(email);
+		User.setPassword(password);
+		User.setConfirmPassword(confirmPassword);
+		User.setPseudo("pseudo");
 
 		Db_utilisateur db_utilisateur = new Db_utilisateur();
 
@@ -103,14 +103,14 @@ public class Inscription extends HttpServlet {
 		
 		if (erreurs.isEmpty()) {
 		
-			db_utilisateur.addUser(b_inscription);
+			db_utilisateur.addUser(User);
 			HttpSession session = request.getSession();
-			session.setAttribute("b_inscription", b_inscription);
+			session.setAttribute("User", User);
 			
-			this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/WEB-INF/connexion.jsp").forward(request, response);
 		}else {
 			request.setAttribute("erreurs", erreurs);
-			request.setAttribute("b_inscription", b_inscription);
+			request.setAttribute("User", User);
 			this.getServletContext().getRequestDispatcher("/WEB-INF/inscription.jsp").forward(request, response);
 		}
 		
