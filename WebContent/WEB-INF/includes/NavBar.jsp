@@ -42,7 +42,7 @@
 				<li class="nav-item active">
 			</c:if>
 
-			<c:if test="${! active=='mes_messages'}">
+			<c:if test="${! active=='mes_messages*'}">
 				<li class="nav-item">
 			</c:if><a class="nav-link" href="./mes_messages">Mes
 					messages</a></li>
