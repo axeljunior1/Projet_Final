@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -67,6 +68,18 @@ public class Db_utilisateur {
 		return listeUtilisateurs; 
 
 	}
+	
+	public boolean containtUser(Utilisateur utilisateur) {
+		
+		for (Utilisateur user : utilisateurs()) {
+			
+			if (user.getEmail().equals(utilisateur.getEmail()) && user.getPassword().equals(utilisateur.getPassword())) {
+				return true;
+			}
+		}
+		return false;
+		
+	}
 
 	public void addUser( Utilisateur utilisateur) {
 		loadDatabase();
@@ -90,21 +103,7 @@ public class Db_utilisateur {
 	}
 
 
-	public void addj() {
-		loadDatabase();
-
-		try {
-
-			PreparedStatement preparableStatement =  connexion.prepareStatement("INSERT INTO test VALUES (2,'junior');");
-			
-			preparableStatement.executeUpdate();
-
-
-		} catch (Exception e) {
-			System.out.println("pb a l'ajout ");
-			e.printStackTrace();
-		}
-	}
+	
 	
 	private void loadDatabase() {
 		// Chargement du driver

@@ -16,26 +16,20 @@ String s2 = "inscription";
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
 
-<link rel="stylesheet" type="text/css" href="inc/inscription.css" />
+<link rel="stylesheet" type="text/css" href="inc/inscription_css.css" />
 </head>
 <body>
 
 	<%@ include file="includes/NavBar.jsp"%>
 
-	<div></div>
 	<div class="container">
 		<div class="jumbotron" style="padding-top: 0px;">
 			<div class="card-header bg-transparent border-success"  >
 					
 			</div>
 			<form action="inscription" class="form" id="form" method="post">
-				
-				
-				
-				
-				
 
-				<h2>Sign in</h2>
+				<h2>Sign up</h2>
 				<c:if test="${! empty erreurs  }">
 					<div style="font-family: Montserrat; color: red;">
 						<c:if test="${! empty erreurs['firstName']  }">

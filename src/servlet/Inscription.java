@@ -56,17 +56,17 @@ public class Inscription extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
-		String resultat;
+		
         Map<String, String> erreurs = new HashMap<String, String>();
         
         
 
 		Utilisateur b_inscription = new Utilisateur();
 
-		String firstName=request.getParameter(CHAMP_NOM);
-		String lastName=request.getParameter(CHAMP_PRENOM);
 		String email=request.getParameter(CHAMP_EMAIL);
 		String password=request.getParameter(CHAMP_PASS);
+		String firstName=request.getParameter(CHAMP_NOM);
+		String lastName=request.getParameter(CHAMP_PRENOM);
 		String confirmPassword = request.getParameter(CHAMP_CONF);
 		
 		b_inscription.setFirstName(firstName);
