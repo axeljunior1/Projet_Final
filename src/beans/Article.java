@@ -7,13 +7,21 @@ public class Article {
 	private String vendeur ;
 
 	private String description ;
-	private String prix ;
+	private float prix ;
 	private String categorie ;
 
 	private String image ;
 	
+	private int idarticle;
 	
 	
+
+	public int getIdarticle() {
+		return idarticle;
+	}
+	public void setIdarticle(int idarticle) {
+		this.idarticle = idarticle;
+	}
 	
 	public String getImage() {
 		return image;
@@ -39,11 +47,11 @@ public class Article {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getPrix() {
+	public float getPrix() {
 		return prix;
 	}
-	public void setPrix(String prix) {
-		this.prix = prix;
+	public void setPrix(Float prix2) {
+		this.prix = prix2;
 	}
 	public String getCategorie() {
 		return categorie;
