@@ -58,24 +58,24 @@ String s2 = "inscription";
 					</div>
 				</c:if>
 				<p type="Nom *:">
-					<input type="text" id="firstName" name="firstName" value="<c:out value="${param.firstName}"/>" />
+					<input type="text" id="firstName" placeholder="Nom" name="firstName" value="<c:out value="${param.firstName}"/>" />
 				</p>
 
 				<p type="Prénom *:">
-					<input type="text" id="lastName" name="lastName" value="<c:out value="${param.lastName}"/>" />
+					<input type="text" id="lastName" name="lastName" placeholder="Prénom" value="<c:out value="${param.lastName}"/>" />
 				</p>
 
 
 				<p type="Email *:">
-					<input type="email" name="email" id="email" value="<c:out value="${param.email}"/>" />
+					<input type="email" name="email" placeholder="Email" id="email" value="<c:out value="${param.email}"/>" />
 				</p>
 
 				<p type="Mot de passe *:">
-					<input type="password" name="password" id="password" value="" />
+					<input type="password" name="password" placeholder="password" id="password" value="" />
 				</p>
 
-				<p type="Confirmer le mot de passe *:">
-					<input type="password" name="confirmPassword" id="confirmPassword"
+				<p type="Confirmation *:">
+					<input type="password" name="confirmPassword" placeholder="Confirmer le mot de passe" id="confirmPassword"
 						value="" />
 				</p> <br>
 

@@ -26,32 +26,22 @@ public class Connexion extends HttpServlet {
 	public static final String CHAMP_EMAIL = "email";
 	public static final String CHAMP_PASS = "password";
 	
+	// données de la DB
 	Db_utilisateur db_utilisateur = new Db_utilisateur();
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+   
     public Connexion() {
         super();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-
-		Db_utilisateur db_utilisateur = new Db_utilisateur();
-		Utilisateur u = new Utilisateur();
-		u.setEmail("d@d.com");
-		u.setPassword("junior0000");
-		System.out.println(db_utilisateur.containtUser(u));
+		
 		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/connexion.jsp").forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
@@ -81,7 +71,7 @@ public class Connexion extends HttpServlet {
 			} catch (Exception e) {
 				erreurs.put(CHAMP_PASS, e.getMessage());
 			}
-			
+			if(erreurs.isEmpty())
 			try {
 				validationIdDansDb(User);
 			} catch (Exception e) {
@@ -89,14 +79,18 @@ public class Connexion extends HttpServlet {
 			}
 			
 			System.out.println(erreurs.size());
+			
+			// si la liste d'erreur ne contient pas d'erreur alors le formulaire est valide 
 			if (erreurs.isEmpty()) {
-				
+				// on recupere la session en cours et on affecte des valeurs pour le nouvel utilisateur
 				HttpSession session = request.getSession();
 				User = db_utilisateur.findUser(User);
 				session.setAttribute("User", User);
 				
+				//renvois a la page d'acceuil 
 				this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
 			}else {
+				// si le formuliare contient de erreurs alors retour a la jsp de connexion et affichage de ces erreurs
 				request.setAttribute("erreurs", erreurs);
 				//request.setAttribute("b_inscription", b_inscription);
 				this.getServletContext().getRequestDispatcher("/WEB-INF/connexion.jsp").forward(request, response);

@@ -34,6 +34,7 @@ public class Inscription extends HttpServlet {
 	public static final String CHAMP_NOM = "firstName";
 	public static final String CHAMP_PRENOM = "lastName";
 
+	Db_utilisateur db_utilisateur = new Db_utilisateur();
 
 
 
@@ -76,7 +77,7 @@ public class Inscription extends HttpServlet {
 		User.setConfirmPassword(confirmPassword);
 		User.setPseudo("pseudo");
 
-		Db_utilisateur db_utilisateur = new Db_utilisateur();
+		
 
 		
 
@@ -128,6 +129,11 @@ public class Inscription extends HttpServlet {
 		    } else {
 		        throw new Exception( "Merci de saisir une adresse mail." );
 		    }
+		 for (Utilisateur user : db_utilisateur.utilisateurs()) {
+			if (user.getEmail().equals(email)) {
+				throw new Exception( "Un utilisateur possede deja cette adresse mail." );
+			}
+		}
 	 }
 	 
 	 private void validationMotsDePasse( String motDePasse, String confirmation ) throws Exception{

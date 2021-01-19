@@ -56,12 +56,12 @@ request.setAttribute("s2", s2);
 				
 
 				<p type="Email *:">
-					<input type="email" name="email" id="email"
+					<input type="email" name="email" placeholder="Email" id="email"
 						value="<c:out value="${param.email}"/>" />
 				</p>
 
 				<p type="Mot de passe *:">
-					<input type="password" name="password" id="password" value="<c:out value="${User.password}"/>" />
+					<input type="password" placeholder="Password" name="password" id="password" value="<c:out value="${User.password}"/>" />
 				</p>
 				<br>
 
