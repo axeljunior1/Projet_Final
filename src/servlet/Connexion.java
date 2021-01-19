@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import beans.B_connexion;
+import beans.Article;
 import beans.Utilisateur;
 import database.Db_utilisateur;
 

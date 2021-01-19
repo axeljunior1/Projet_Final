@@ -17,99 +17,345 @@ String active = "active";
 
 
 
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
 
+<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/price-range.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 
-	
 </head>
 <body>
 	
+	<%@ include file="includes/header.jsp"%>
 	
-
-	<%@ include file="includes/NavBar.jsp"%>
-
-	<div></div>
-	<div class="container">
-		<div class="jumbotron" style="padding-top: 0px;">
-			<div class="card-header bg-transparent border-success" style="margin:-2em; margin-top: -0.7em; margin-bottom: -1em" >
+	<section id="slider"><!--slider-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+							<li data-target="#slider-carousel" data-slide-to="1"></li>
+							<li data-target="#slider-carousel" data-slide-to="2"></li>
+						</ol>
+						
+						<div class="carousel-inner">
+							<div class="item active">
+								<div class="col-sm-6">
+									<h1><span>E</span>-BUY</h1>
+									<h2>The best e-shopppp!!!</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+									<button type="button" class="btn btn-default get">Get it now</button>
+								</div>
+								<div class="col-sm-6">
+									<img src="https://static.iceshop.fr/2886-medium_default/frigo-vitrine-a-boissons-noir-380-litres.jpg" class="girl img-responsive" alt="" />
+									
+								</div>
+							</div>
+							<div class="item">
+								<div class="col-sm-6">
+									<h1><span>E</span>-BUY</h1>
+									<h2>The best e-shopppp!!!</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+									<button type="button" class="btn btn-default get">Get it now</button>
+								</div>
+								<div class="col-sm-6">
+									<img src="https://www.electrodepot.fr/media/catalog/product/cache/1a40d1f945549a9ec18309b0a600e55c/P959112.jpg" class="girl img-responsive" alt="" />
+									
+								</div>
+							</div>
+							
+							<div class="item">
+								<div class="col-sm-6">
+									<h1><span>E</span>-BUY</h1>
+									<h2>The best e-shopppp!!!</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+									<button type="button" class="btn btn-default get">Get it now</button>
+								</div>
+								<div class="col-sm-6">
+									<img src="https://mixelec.fr/wp-content/uploads/2020/04/gaming.jpg" class="girl img-responsive" alt="" />
+								</div>
+							</div>
+							
+						</div>
+						
+						<a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+							<i class="fa fa-angle-left"></i>
+						</a>
+						<a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+							<i class="fa fa-angle-right"></i>
+						</a>
+					</div>
+					
+				</div>
 			</div>
-			<div style="margin-top: 2em">
-			<p class="lead"> 
-			${s} This is a simple hero unit, a simple
-				jumbotron-style component for calling extra attention to featured
-				content or information.</p>
-				<a href="/Projet_4A_Sys_Dis/connexion"> lien de connexion</a>
-				<a href="/Projet_4A_Sys_Dis/mes_messages"> lien de messages</a>
-				<a href="/Projet_4A_Sys_Dis/mes_commandes"> lien de commandes</a>
-				<a href="/Projet_4A_Sys_Dis/mes_informations"> lien de info</a>
-				<a href="/Projet_4A_Sys_Dis/inscription"> lien de inscrip</a>
-			</div>
-			<c:if test="${!empty cf.res }">
-				<c:out value="${cf.res }"></c:out>
-			</c:if>
-			<form action="fileJsp" method="post" style="margin-top: 1em;">
-				<p>
-					<label for="nom"> Nom:</label> <input type="text" name="nom"
-						id="nom">
-				</p>
-				<p>
-					<label for="prenom"> prenom:</label> <input type="text"
-						name="prenom" id="prenom">
-				</p>
-				<p>
-					<label for="age"> age:</label> <input type="text" name="age"
-						id="age">
-				</p>
-				<input type="submit">
-			</form>
+		</div>
+	</section><!--/slider-->
+	
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+						<h2>Category</h2>
+						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Sportswear
+										</a>
+									</h4>
+								</div>
+								<div id="sportswear" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="#">Nike </a></li>
+											<li><a href="#">Under Armour </a></li>
+											<li><a href="#">Adidas </a></li>
+											<li><a href="#">Puma</a></li>
+											<li><a href="#">ASICS </a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Mens
+										</a>
+									</h4>
+								</div>
+								<div id="mens" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="#">Fendi</a></li>
+											<li><a href="#">Guess</a></li>
+											<li><a href="#">Valentino</a></li>
+											<li><a href="#">Dior</a></li>
+											<li><a href="#">Versace</a></li>
+											<li><a href="#">Armani</a></li>
+											<li><a href="#">Prada</a></li>
+											<li><a href="#">Dolce and Gabbana</a></li>
+											<li><a href="#">Chanel</a></li>
+											<li><a href="#">Gucci</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#womens">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Womens
+										</a>
+									</h4>
+								</div>
+								<div id="womens" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="#">Fendi</a></li>
+											<li><a href="#">Guess</a></li>
+											<li><a href="#">Valentino</a></li>
+											<li><a href="#">Dior</a></li>
+											<li><a href="#">Versace</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Kids</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Fashion</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Households</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Interiors</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Clothing</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Bags</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Shoes</a></h4>
+								</div>
+							</div>
+						</div><!--/category-products-->
+					
+						<div class="brands_products"><!--brands_products-->
+							<h2>Brands</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href="#"> <span class="pull-right">(50)</span>Acne</a></li>
+									<li><a href="#"> <span class="pull-right">(56)</span>Grüne Erde</a></li>
+									<li><a href="#"> <span class="pull-right">(27)</span>Albiro</a></li>
+									<li><a href="#"> <span class="pull-right">(32)</span>Ronhill</a></li>
+									<li><a href="#"> <span class="pull-right">(5)</span>Oddmolly</a></li>
+									<li><a href="#"> <span class="pull-right">(9)</span>Boudestijn</a></li>
+									<li><a href="#"> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
+								</ul>
+							</div>
+						</div><!--/brands_products-->
 
-			<c:forEach items="${etudiants}" var="etudiant">
-				<p>${etudiant.nom }</p>
-			</c:forEach>
-			<p>Lorem Ipsum is simply dummy text of the printing and
-				typesetting industry. Lorem Ipsum has been the industry's standard
-				dummy text ever since the 1500s, when an unknown printer took a
-				galley of type and scrambled it to make a type specimen book. It has
-				survived not only five centuries, but also the leap into electronic
-				typesetting, remaining essentially unchanged. It was popularised in
-				the 1960s with the release of Letraset sheets containing Lorem Ipsum
-				passages, and more recently with desktop publishing software like
-				Aldus PageMaker including versions of Lorem Ipsum.</p>
+						<div class="price-range">
+							<!--price-range-->
+							<h2>Price Range</h2>
+							<div class="well text-center">
+								<section id="form" style="margin: 0px;">
+									<!--form-->
+									<form method="post">
+										<div class="form-group">
+										<input type="text" class="form-control" 
+												aria-describedby="emailHelp" placeholder="prix min" name="prix_min">
+										</div>
+										<div class="form-group">
+											 <input type="text" class="form-control" 
+												aria-describedby="emailHelp" placeholder="prix max"  name="prix_max">
+										</div>
+										<button type="submit" class="btn btn-primary">Submit</button>
+									</form>
+							</div>
+						</div>
+						<!--/price-range-->
 
-			<p>Lorem Ipsum is simply dummy text of the printing and
-				typesetting industry. Lorem Ipsum has been the industry's standard
-				dummy text ever since the 1500s, when an unknown printer took a
-				galley of type and scrambled it to make a type specimen book. It has
-				survived not only five centuries, but also the leap into electronic
-				typesetting, remaining essentially unchanged. It was popularised in
-				the 1960s with the release of Letraset sheets containing Lorem Ipsum
-				passages, and more recently with desktop publishing software like
-				Aldus PageMaker including versions of Lorem Ipsum.</p>
-
-				<div class="dropdown">
-					<button class="btn btn-secondary dropdown-toggle" type="button"
-						id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
-						aria-expanded="false">Dropdown</button>
-					<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-						<button class="dropdown-item" type="button">Action</button>
-						<button class="dropdown-item" type="button">Anotheraction</button>
-						<button class="dropdown-item" type="button">Somethingelse here</button>
+						<div class="shipping text-center"><!--shipping-->
+							<img src="images/home/shipping.jpg" alt="" />
+						</div><!--/shipping-->
+					
 					</div>
 				</div>
 				
-			<hr class="my-4">
-			<p>It uses utility classes for typography and spacing to space
-				content out within the larger container.</p>
-			<p class="lead">
-				<a class="btn btn-primary btn-lg" href="#" role="button">Learn
-					more</a>
-			</p>
-
+				<div class="col-sm-9 padding-right">
+					<div class="features_items"><!--features_items-->
+						<h2 class="title text-center">Features Items</h2>
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+										<div class="productinfo text-center">
+											<img src="images/home/product1.jpg" alt="" />
+											<h2>$56</h2>
+											<p>Easy Polo Black Edition</p>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="images/home/product2.jpg" alt="" />
+										<h2>$56</h2>
+										<p>Easy Polo Black Edition</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="images/home/product3.jpg" alt="" />
+										<h2>$56</h2>
+										<p>Easy Polo Black Edition</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="images/home/product4.jpg" alt="" />
+										<h2>$56</h2>
+										<p>Easy Polo Black Edition</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+									</div>
+									<img src="images/home/new.png" class="new" alt="" />
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="images/home/product5.jpg" alt="" />
+										<h2>$56</h2>
+										<p>Easy Polo Black Edition</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+									</div>
+									<img src="images/home/sale.png" class="new" alt="" />
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="images/home/product6.jpg" alt="" />
+										<h2>$56</h2>
+										<p>Easy Polo Black Edition</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div><!--features_items-->
+					
+					
+					
+				</div>
+			</div>
 		</div>
-	</div>
-	<%@include file="includes/footer.jsp"%>
+	</section>
+	
+	
+	
+<%@ include file="includes/footer.jsp"%>
+  
+    <script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.scrollUp.min.js"></script>
+	<script src="js/price-range.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

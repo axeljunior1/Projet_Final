@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-
+import beans.Article;
 import beans.Utilisateur;
 
 public class Db_utilisateur {
@@ -115,8 +115,28 @@ public class Db_utilisateur {
 		}
 	}
 
+	public void addArticle( Article article) {
+		loadDatabase();
+
+		try {
+
+			PreparedStatement preparableStatement =  connexion.prepareStatement("INSERT INTO articles(nom, description, prix, categorie, image) VALUES (?,?,?,?,?);");
+			preparableStatement.setString(1, article.getNom());
+			preparableStatement.setString(2, article.getDescription());
+			preparableStatement.setString(3, article.getPrix());
+			preparableStatement.setString(4, article.getCategorie());
+			preparableStatement.setString(5, article.getImage());
+
+			preparableStatement.executeUpdate();
+
+		} catch (Exception e) {
+			System.out.println("pb a l'ajout ");
+			e.printStackTrace();
+		}
+	}
 
 
+	
 
 	private void loadDatabase() {
 		// Chargement du driver
