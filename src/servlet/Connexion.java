@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.jws.soap.SOAPBinding.Use;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -85,8 +86,10 @@ public class Connexion extends HttpServlet {
 				// on recupere la session en cours et on affecte des valeurs pour le nouvel utilisateur
 				HttpSession session = request.getSession();
 				User = db_utilisateur.findUser(User);
-				session.setAttribute("User", User);
+				String user_name = User.getLastName().toUpperCase();
 				
+				session.setAttribute("User", User);
+				session.setAttribute("user_name", user_name);
 				//renvois a la page d'acceuil 
 				this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
 			}else {

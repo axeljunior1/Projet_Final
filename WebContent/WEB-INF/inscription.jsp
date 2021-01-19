@@ -100,10 +100,12 @@ String s2 = "inscription";
 				
 					<div class="row">
 						<div class="col" align="left">
-							<h2 ><a href="./connexion"> Sign in </a> </h2>
+						
+						<span>Already have an Account?</span>
+							<h2 ><a href="./connexion" style="color: green"> Sign in </a> </h2>
 						</div>
-						<div class="col">
-							<button >Sign Up</button>
+						<div class="col" >
+							<button style="color: white;">Sign Up</button>
 						</div>
 					</div>
 			</form>

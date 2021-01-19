@@ -82,9 +82,9 @@ request.setAttribute("s2", s2);
 
 
 				<div class="row">
-					<div class="col" align="left">
-						
-							<h2> <a href="./inscription">Sign Up</a></h2>
+					<div class="col" >
+							<span>Do not have an Account?</span>
+							<h3> <a href="./inscription" style="color: green">Sign Up</a></h3>
 						
 					</div>
 					<div class="col">

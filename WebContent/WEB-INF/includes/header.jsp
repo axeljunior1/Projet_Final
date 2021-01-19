@@ -26,7 +26,16 @@
 									<button class="btn btn-outline-success my-2 my-sm-0"
 										type="submit" style="border-radius: 50px;">Search</button>
 								</form></li>
-							<li><a href="#"><i class="fa fa-user"></i> Account</a></li>
+							<li><a href="#"><i class="fa fa-user"></i> 
+							
+							<c:if test="${ empty User.lastName}">
+								Account
+							</c:if>
+							<c:if test="${! empty User.lastName}">
+								Bonjour ${ user_name }
+							</c:if>
+							
+							</a></li>
 							<li><a href="#"><i class="fa fa-star"></i>Contact</a></li>
 							<!-- 	<li><a href="checkout.html"><i class="fa fa-crosshairs"></i>
 									Checkout</a></li>   -->
