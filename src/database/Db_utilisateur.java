@@ -68,31 +68,31 @@ public class Db_utilisateur {
 		return listeUtilisateurs; 
 
 	}
-	
+
 	public boolean containtUser(Utilisateur utilisateur) {
-		
+
 		for (Utilisateur user : utilisateurs()) {
-			
+
 			if (user.getEmail().equals(utilisateur.getEmail()) && user.getPassword().equals(utilisateur.getPassword())) {
 				return true;
 			}
 		}
 		return false;
-		
+
 	}
-	
+
 	public Utilisateur findUser(Utilisateur utilisateur) {
-		
+
 		for (Utilisateur user : utilisateurs()) {
-			
+
 			if (user.getEmail().equals(utilisateur.getEmail()) && user.getPassword().equals(utilisateur.getPassword())) {
 				return user;
 			}
 		}
 		return null;
 	}
-	
-	
+
+
 
 	public void addUser( Utilisateur utilisateur) {
 		loadDatabase();
@@ -116,8 +116,8 @@ public class Db_utilisateur {
 	}
 
 
-	
-	
+
+
 	private void loadDatabase() {
 		// Chargement du driver
 		try {
@@ -128,7 +128,7 @@ public class Db_utilisateur {
 
 		try {
 			connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_projet_4a?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "root");
-		
+
 		} 
 		catch (SQLException e) {
 			System.out.println("connect a la bd ");
