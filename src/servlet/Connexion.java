@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import beans.Article;
 import beans.Utilisateur;
 import database.Db_utilisateur;
+import database.Encryption;
 
 /**
  * Servlet implementation class Connexion
@@ -59,7 +60,6 @@ public class Connexion extends HttpServlet {
 			
 			User.setEmail(email);
 			User.setPassword(password);
-			
 			
 			try {
 				validationEmail( email );

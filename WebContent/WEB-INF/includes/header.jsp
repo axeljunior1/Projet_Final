@@ -16,17 +16,16 @@
 				<div class="col-sm-8">
 					<div class="shop-menu pull-right">
 						<ul class="nav navbar-nav">
-							<li><form class="form-inline" method="post">
+							<li><form class="form-inline" method="post" action="index">
 
 
-									<input class="form-control mr-sm-2" type="search"
-										placeholder="Search" aria-label="Search"
-										style="width: auto; background: #F0F0E9; border-radius: 50px;">
+									<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+										name="search_bar" style="width: auto; background: #F0F0E9; border-radius: 50px;">
 
-									<button class="btn btn-outline-success my-2 my-sm-0"
+									<button class="btn btn-outline-success my-2 my-sm-0" 
 										type="submit" style="border-radius: 50px;">Search</button>
 								</form></li>
-							<li><a href="#"><i class="fa fa-user"></i> 
+							<li><a href="./contact"><i class="fa fa-user"></i> 
 							
 							<c:if test="${ empty User.lastName}">
 								Account

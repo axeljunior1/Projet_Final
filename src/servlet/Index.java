@@ -14,54 +14,27 @@ import javax.servlet.http.HttpSession;
 import beans.Article;
 import database.Db_utilisateur;
 
-/**
- * Servlet implementation class Index
- */
+
 @WebServlet("/Index")
 public class Index extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+	List<Article> liste_articles = new ArrayList<Article>();
+    
     public Index() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		Db_utilisateur db_utilisateur =  new Db_utilisateur();
+		HttpSession session = request.getSession();
 		
-		Article article =  new Article();
-		article.setNom("telephone");
-		article.setDescription(" lite p 40 ");
-		article.setCategorie("elec");
-		article.setPrix((float) 100);
-		article.setImage("image du p40");
+		liste_articles = db_utilisateur.articles();
 		
-		List<Article> listeArticle = new ArrayList<Article>();
+		session.setAttribute("liste_articles", liste_articles);
 		
-		listeArticle.add(article);
-		System.out.println(article.getIdarticle());
-		Article a = new Article();
-		
-		a.setNom("telephone ps jeu");
-		a.setDescription(" lite p 40 ");
-		a.setCategorie("elec");
-		a.setPrix((float) 100);
-		a.setImage("image du p40");
-		a.setIdarticle(5);
-
-		System.out.println(a.getIdarticle());
-		
-		System.out.println(db_utilisateur.containtArticle(listeArticle, a));
-		System.out.println(a.getNom().contains("ps pdff"));
-		
-		//db_utilisateur.addArticle(article);
+		System.out.println(db_utilisateur.articles().size()!=0);
 		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
 	}
@@ -71,12 +44,23 @@ public class Index extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+
 		HttpSession session = request.getSession();
 		
-		String current_page = "active";
-	
+		String search_bar = request.getParameter("search_bar");
 		
-		doGet(request, response);
+		if (search_bar != "" || search_bar !=null) {
+			Db_utilisateur db_utilisateur =  new Db_utilisateur();
+			 liste_articles =  db_utilisateur.searchArticle(search_bar);
+			if (liste_articles.size()!=0) {
+				session.setAttribute("liste_articles", liste_articles );
+			}else {
+				session.setAttribute("reponse", "Aucun element trouvé");
+			}
+
+			this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
+		} 
+		
 	}
 
 }

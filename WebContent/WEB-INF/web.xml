@@ -38,31 +38,15 @@
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>Mes_commandes</servlet-name>
-		<servlet-class>servlet.Mes_commandes</servlet-class>
+		<servlet-name>Contact</servlet-name>
+		<servlet-class>servlet.Contact</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>Mes_commandes</servlet-name>
-		<url-pattern>/mes_commandes</url-pattern>
+		<servlet-name>Contact</servlet-name>
+		<url-pattern>/contact</url-pattern>
 	</servlet-mapping>
 	
-	<servlet>
-		<servlet-name>Mes_informafions</servlet-name>
-		<servlet-class>servlet.Mes_informafions</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Mes_informafions</servlet-name>
-		<url-pattern>/mes_informations</url-pattern>
-	</servlet-mapping>
 	
-	<servlet>
-		<servlet-name>Mes_messages</servlet-name>
-		<servlet-class>servlet.Mes_messages</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Mes_messages</servlet-name>
-		<url-pattern>/mes_messages</url-pattern>
-	</servlet-mapping>
 	<servlet>
 		<servlet-name>Index</servlet-name>
 		<servlet-class>servlet.Index</servlet-class>
@@ -70,6 +54,14 @@
 	<servlet-mapping>
 		<servlet-name>Index</servlet-name>
 		<url-pattern>/index</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Details_article</servlet-name>
+		<servlet-class>servlet.Details_article</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Details_article</servlet-name>
+		<url-pattern>/details_article</url-pattern>
 	</servlet-mapping>
 	
 	

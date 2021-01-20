@@ -12,6 +12,7 @@ import java.util.List;
 
 import beans.Article;
 import beans.Utilisateur;
+import sun.security.provider.MD5;
 
 public class Db_utilisateur {
 
@@ -75,9 +76,13 @@ public class Db_utilisateur {
 
 	public boolean containtUser(Utilisateur utilisateur) {
 
+
+		Encryption encryption = new Encryption();
+		String pass_md5 = encryption.MD5(utilisateur.getPassword());
+		System.out.println(pass_md5);
 		for (Utilisateur user : utilisateurs()) {
 
-			if (user.getEmail().equals(utilisateur.getEmail()) && user.getPassword().equals(utilisateur.getPassword())) {
+			if (user.getEmail().equals(utilisateur.getEmail()) && user.getPassword().equals(pass_md5)) {
 				return true;
 			}
 		}
@@ -87,9 +92,12 @@ public class Db_utilisateur {
 
 	public Utilisateur findUser(Utilisateur utilisateur) {
 
+		Encryption encryption = new Encryption();
+		String pass_md5 = encryption.MD5(utilisateur.getPassword());
+		System.out.println(pass_md5);
 		for (Utilisateur user : utilisateurs()) {
-
-			if (user.getEmail().equals(utilisateur.getEmail()) && user.getPassword().equals(utilisateur.getPassword())) {
+			
+			if (user.getEmail().equals(utilisateur.getEmail()) && user.getPassword().equals(pass_md5)) {
 				return user;
 			}
 		}
@@ -103,7 +111,7 @@ public class Db_utilisateur {
 
 		try {
 
-			PreparedStatement preparableStatement =  connexion.prepareStatement("INSERT INTO utilisateurs(firstName, lastName, email, password, confirmPassword, pseudo) VALUES (?,?,?,?,?,?);");
+			PreparedStatement preparableStatement =  connexion.prepareStatement("INSERT INTO utilisateurs(firstName, lastName, email, password, confirmPassword, pseudo) VALUES (?,?,?,MD5(?),MD5(?),?);");
 			preparableStatement.setString(1, utilisateur.getFirstName());
 			preparableStatement.setString(2, utilisateur.getLastName());
 			preparableStatement.setString(3, utilisateur.getEmail());
@@ -144,6 +152,7 @@ public class Db_utilisateur {
 				String categorie = resultat.getString("categorie");
 				String image = resultat.getString("image");
 				int idarticle = resultat.getInt("idarticles");
+				String vendeur = resultat.getString("vendeur");
 
 				Article article = new Article();
 				article.setNom(nom);
@@ -152,6 +161,7 @@ public class Db_utilisateur {
 				article.setImage(image);
 				article.setCategorie(categorie);
 				article.setIdarticle(idarticle);
+				article.setVendeur(vendeur);
 				listeArticles.add(article);
 
 			}
@@ -208,6 +218,16 @@ public class Db_utilisateur {
 		return false;
 
 	}
+	
+	
+	// la liste listeArticle contient l'article article1 ?
+	public boolean ArticlecontaintNom( Article article, String string) {
+
+			if (article.getDescription().contains(string) || article.getNom().contains(string) || article.getVendeur().contains(string) || article.getCategorie().contains(string)) {
+				return true;
+		}
+		return false;
+	}
 
 // rechercher un article dans la data base (bare de recherche)
 	public List<Article> searchArticle(String string) {
@@ -219,7 +239,7 @@ public class Db_utilisateur {
 		for (Article atl : articles()) {
 			
 			for (String string2 : tab_split) {
-				if (atl.getNom().contains(string2) && containtArticle(listeArticle, atl)==false) {
+				if (ArticlecontaintNom(atl, string2) && containtArticle(listeArticle, atl)==false) {
 					listeArticle.add(atl);
 				}
 			}

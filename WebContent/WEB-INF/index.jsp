@@ -49,12 +49,13 @@ String active = "active";
 							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
 							<li data-target="#slider-carousel" data-slide-to="1"></li>
 							<li data-target="#slider-carousel" data-slide-to="2"></li>
+							<li data-target="#slider-carousel" data-slide-to="3"></li>
 						</ol>
 						
 						<div class="carousel-inner">
-							<div class="item active">
-								<div class="col-sm-6">
-									<h1><span>E</span>-BUY</h1>
+							<div class="item ">
+								<div class="col-sm-6" style=" color: blue;">
+									<h1><span>E</span><span style="color: orange;">-BUY </span> </h1>
 									<h2>The best e-shopppp!!!</h2>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 									<button type="button" class="btn btn-default get">Get it now</button>
@@ -88,6 +89,19 @@ String active = "active";
 									<img src="https://mixelec.fr/wp-content/uploads/2020/04/gaming.jpg" class="girl img-responsive" alt="" />
 								</div>
 							</div>
+							
+							<div class="item active">
+								<div class="col-sm-6">
+									<h1><span>E</span>-BUY</h1>
+									<h2>The best e-shopppp!!!</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+									<button type="button" class="btn btn-default get">Get it now</button>
+								</div>
+								<div class="col-sm-6">
+									<img src="https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2020/06/xbox-ps5-vs-770__w1200.jpg" class="girl img-responsive" alt="" />
+								</div>
+							</div>
+							
 							
 						</div>
 						
@@ -254,12 +268,56 @@ String active = "active";
 						<!--/price-range-->
 
 						<div class="shipping text-center"><!--shipping-->
-							<img src="images/home/shipping.jpg" alt="" />
+							<img src="https://www.cdiscount.com/pdt2/f/n/a/1/300x300/mvh62fna/rw/apple-13-3-macbook-air-2019-intel-core-i5.jpg" alt="" />
 						</div><!--/shipping-->
 					
 					</div>
 				</div>
-				
+
+				<c:if test="${liste_articles.size()!=0 }">
+					<div class="col-sm-9 padding-right">
+						<div class="features_items">
+							<!--features_items-->
+							
+							
+							<h2 class="title text-center">Resultat de la recherche</h2>
+							<c:forEach items="${liste_articles}" var="article"
+								varStatus="status">
+								<form action="details_article" method="post">
+									<input type="text" name="id_article"
+										value='<c:out value="${liste_articles[status.count-1].getIdarticle()}" ></c:out>'
+										style="width: 0px; height: 0px;" />
+									<div class="container">
+										<div class="row">
+											
+												<div class="col-sm-3">
+													<button type="submit" style="background: none; border: none;">
+													<img src="${liste_articles[status.count-1].getImage()}"
+														alt="" style="width: 150px; height: 150px;"/>
+											</button>
+												</div>
+												<div class="col-sm-4">
+													<b style="color: blue;">${liste_articles[status.count-1].getNom()}
+													</b> <br>
+													${liste_articles[status.count-1].getDescription()}
+												</div>
+												<div class="col-sm-3" style="align-content: center;">
+													<b> &emsp; &emsp;
+														${liste_articles[status.count-1].getPrix()}&euro;</b> <br>
+													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+												</div>
+										</div>
+									</div>
+									<hr>
+								</form>
+							</c:forEach>
+
+						</div>
+						<!--features_items-->
+					</div>
+
+				</c:if>
+
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
@@ -340,10 +398,9 @@ String active = "active";
 						
 					</div><!--features_items-->
 					
-					
-					
+
+
 				</div>
-			</div>
 		</div>
 	</section>
 	
