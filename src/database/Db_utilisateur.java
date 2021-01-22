@@ -7,12 +7,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import beans.Article;
 import beans.Utilisateur;
-import sun.security.provider.MD5;
 
 public class Db_utilisateur {
 
@@ -40,7 +38,6 @@ public class Db_utilisateur {
 				String email = resultat.getString("email");
 				String pseudo = resultat.getString("pseudo");
 				String password = resultat.getString("password");
-				String confirmPassword = resultat.getString("confirmPassword");
 
 				Utilisateur utilisateur = new Utilisateur();
 				utilisateur.setFirstName(firstName);

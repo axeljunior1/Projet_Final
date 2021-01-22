@@ -4,8 +4,6 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import com.sun.corba.se.spi.orbutil.fsm.Input;
-
 public class Encryption {
 
 	public String MD5(String string) {
