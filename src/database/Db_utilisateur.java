@@ -7,9 +7,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import beans.Article;
+import beans.Panier;
 import beans.Utilisateur;
 
 public class Db_utilisateur {
@@ -124,6 +127,9 @@ public class Db_utilisateur {
 		}
 	}
 
+	
+	
+	
 
 	// table article 
 
@@ -244,8 +250,107 @@ public class Db_utilisateur {
 		return listeArticle;
 
 	}
+	
+	
+	// revoie d'un article a partir de son id 
+		public Article searchArticleById(int idarticle ) {
+			
+			for (Article atl : articles()) {
+				
+					if(atl.getIdarticle()==idarticle) return atl;
+				
+			}
+			return null;
+
+		}
+	
 
 
+		
+		
+// table panier 
+		
+		//liste des aticles dans le panier 
+		public Map<Integer, Article> article_panier() {
+
+			Map<Integer, Article> map_article_panier = new HashMap<Integer, Article>();
+			
+			Statement statement = null ; 
+			ResultSet resultat = null ; 
+			// chargement du driver
+			loadDatabase();
+
+			try {
+
+				statement = connexion.createStatement();
+
+				resultat = statement.executeQuery("SELECT * FROM db_projet_4a.panier;");
+
+				while (resultat.next()) {
+
+					int idarticle = resultat.getInt("idarticle");
+					int idarticle_panier = resultat.getInt("idarticle_panier");
+
+					Panier panier = new Panier();
+					panier.setIdarticle(idarticle);
+					panier.setIdarticle_panier(idarticle_panier);
+					map_article_panier.put(idarticle_panier, searchArticleById(panier.getIdarticle()));
+				}
+
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}finally {
+
+				try {
+					if (resultat!=null) resultat.close();
+					if (statement!=null) statement.close();
+					if (connexion!=null) connexion.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			
+			return map_article_panier; 
+
+		}
+
+		
+		// ajout article dans le panier  
+		public void addArticlePanier( int  idarticle) {
+			loadDatabase();
+
+			try {
+
+				PreparedStatement preparableStatement =  connexion.prepareStatement("INSERT INTO panier(idarticle) VALUES (?);");
+				
+				preparableStatement.setInt(1, idarticle);
+
+				preparableStatement.executeUpdate();
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		// supprimer article dans le panier  
+		public void SuppArticlePanier( int  idarticle_panier) {
+			loadDatabase();
+
+			try {
+
+				PreparedStatement preparableStatement =  connexion.prepareStatement("DELETE FROM panier WHERE ('idarticle_panier = '?');");
+				
+				preparableStatement.setInt(1, idarticle_panier);
+
+				preparableStatement.executeUpdate();
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
 
 // chargement de la base de données 
 	private void loadDatabase() {

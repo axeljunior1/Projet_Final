@@ -34,7 +34,6 @@ public class Index extends HttpServlet {
 		
 		session.setAttribute("liste_articles", liste_articles);
 		
-		System.out.println(db_utilisateur.articles().size()!=0);
 		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
 	}

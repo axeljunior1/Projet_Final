@@ -64,6 +64,15 @@
 		<url-pattern>/details_article</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>Panier</servlet-name>
+		<servlet-class>servlet.Panier</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Panier</servlet-name>
+		<url-pattern>/panier</url-pattern>
+	</servlet-mapping>
+	
 	
 
 	<jsp-config>
