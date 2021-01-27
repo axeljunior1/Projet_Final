@@ -108,7 +108,7 @@ public class Inscription extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("User", User);
 			
-			this.getServletContext().getRequestDispatcher("/WEB-INF/connexion.jsp").forward(request, response);
+			this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
 		}else {
 			request.setAttribute("erreurs", erreurs);
 			request.setAttribute("User", User);

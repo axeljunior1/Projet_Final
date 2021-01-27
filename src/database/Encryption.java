@@ -18,7 +18,6 @@ public class Encryption {
 			return hasnext;
 		} catch (NoSuchAlgorithmException e) {
 			throw new RuntimeException(e);
-		}
-		
+	}
 	}
 }

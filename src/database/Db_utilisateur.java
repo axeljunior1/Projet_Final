@@ -340,7 +340,7 @@ public class Db_utilisateur {
 
 			try {
 
-				PreparedStatement preparableStatement =  connexion.prepareStatement("DELETE FROM panier WHERE ('idarticle_panier = '?');");
+				PreparedStatement preparableStatement =  connexion.prepareStatement("DELETE FROM panier WHERE (idarticle_panier = ?);");
 				
 				preparableStatement.setInt(1, idarticle_panier);
 

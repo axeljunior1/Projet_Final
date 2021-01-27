@@ -10,7 +10,7 @@ request.setAttribute("s1", s1);
 request.setAttribute("s2", s2);
 %>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Connexion | E-Buy</title>
 
 <link rel="stylesheet" type="text/css" href="inc/inscription_css.css" />
 

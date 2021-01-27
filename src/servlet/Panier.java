@@ -35,7 +35,7 @@ public class Panier extends HttpServlet {
 	 */
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+			HttpSession session = request.getSession();
 		    
 
 			Map<Integer, Article> map = new HashMap<Integer, Article>();
@@ -44,7 +44,7 @@ public class Panier extends HttpServlet {
 			
 
 			
-			request.setAttribute("map", map);
+			session.setAttribute("map", map);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/panier.jsp").forward(request, response);
 	}
 
@@ -56,20 +56,28 @@ public class Panier extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		
-		String string = request.getParameter("idarticle");
+		if (request.getParameter("retire_article_panier") != null) {
+
+			int retire_article_panier = Integer.parseInt(request.getParameter("retire_article_panier"));
+			
+			db_utilisateur.SuppArticlePanier(retire_article_panier);
+			
+		}
 		
-		int idarticle = Integer.parseInt(string);
 		
-		db_utilisateur.addArticlePanier(idarticle);
+		if (request.getParameter("idarticle") != null) {
+			
+			String string = request.getParameter("idarticle");
+			
+			int idarticle = Integer.parseInt(string);
+			
+			db_utilisateur.addArticlePanier(idarticle);
+		}
 		
 		Map<Integer, Article> map = db_utilisateur.article_panier();
 		
 		session.setAttribute("map", map);
-		
-		
-//		session.setAttribute("articles_panier", db_utilisateur.article_panier());
-//		System.out.println(db_utilisateur.article_panier().size());
-//		
+				
 		this.getServletContext().getRequestDispatcher("/WEB-INF/panier.jsp").forward(request, response);
 	}
 

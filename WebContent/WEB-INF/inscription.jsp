@@ -10,7 +10,7 @@ String s2 = "inscription";
 	request.setAttribute("s2", s2);
 %>
 <meta charset="ISO-8859-1">
-<title>${s2 }</title>
+<title>Inscription | E-Buy</title>
 
 <link rel="stylesheet" type="text/css" href="inc/inscription_css.css" />
 

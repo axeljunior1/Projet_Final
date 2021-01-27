@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Contact | E-Shopper</title>
+    <title>Panier | E-Buy</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/prettyPhoto.css" rel="stylesheet">
@@ -36,38 +36,45 @@
 					<thead>
 					
 						<tr>
-							<th scope="col">#</th>
-							<th scope="col" align="center">First</th>
-							<th scope="col">Last</th>
-							<th scope="col">Handle</th>
+							<th scope="col"></th>
+							<th scope="col" align="center">Article</th>
+							<th scope="col">prix</th>
+							<th scope="col"></th>
 						</tr>
 					</thead>
 					<tbody>
-					<c:choose>
-					<c:when test="${ map.size() !=0 }">
-					<c:forEach items="${map}" var="entry" varStatus="status">
-						<tr>
-							<td class="cart_product">
-								<a href=""> <img class="mr-3" src="${entry.value.getImage()}"  style="width: 70px; height: 70px;"></a>
-							</td>
-							<td class="cart_description">
-								<h4><a href="">${entry.value.getNom()}</a></h4>
-								<p>Web ID: 1089772</p>
-							</td>
-							<td>Mark</td>
-							<td>Otto</td>
-						</tr>
-						</c:forEach>
-						</c:when>
-						<c:when test="${empty map}">
-							<h3 align="center"> Vous n'avez aucun article dans votre Panier </h3>
-							<br>
-							
-							
-							
-							
-						</c:when>
-					</c:choose>
+						<c:choose>
+							<c:when test="${ map.size() !=0 }">
+								<c:forEach items="${map}" var="entry" varStatus="status">
+									<tr>
+										<td class="cart_product"><a href=""> <img
+												class="mr-3" src="${entry.value.getImage()}"
+												style="width: 70px; height: 70px;"></a></td>
+										<td class="cart_description">
+											<h4>
+												<a href="">${entry.value.getNom()}</a>
+											</h4>
+
+										</td>
+										<td style="color: red;">${entry.value.getPrix()}</td>
+										<td>
+											<form action="panier" method="post">
+												<input type="hidden" name="retire_article_panier" value="${entry.key}">
+												<input type="submit" value="Retirer"  >
+											</form>
+
+										</td>
+										
+									</tr>
+									
+								</c:forEach>
+							</c:when>
+							<c:when test="${empty map}">
+								<h3 align="center">Vous n'avez aucun article dans votre
+									Panier</h3>
+								<br>
+							</c:when>
+						</c:choose>
 					</tbody>
 				</table>
 			</div>
