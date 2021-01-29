@@ -105,7 +105,7 @@ String s2 = "inscription";
 							<h2 ><a href="./connexion" style="color: green"> Sign in </a> </h2>
 						</div>
 						<div class="col" >
-							<button style="color: white;">Sign Up</button>
+							<button  style="color: white;">Sign Up</button>
 						</div>
 					</div>
 			</form>

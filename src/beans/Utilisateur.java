@@ -9,6 +9,8 @@ public class Utilisateur {
 	private String password ;
 	private String ConfirmPassword ;
 	private String pseudo;
+	
+	
 	public String getFirstName() {
 		return firstName;
 	}

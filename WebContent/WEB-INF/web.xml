@@ -73,7 +73,14 @@
 		<url-pattern>/panier</url-pattern>
 	</servlet-mapping>
 	
-	
+	<servlet>
+		<servlet-name>Compte</servlet-name>
+		<servlet-class>servlet.Compte</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Compte</servlet-name>
+		<url-pattern>/compte</url-pattern>
+	</servlet-mapping>
 
 	<jsp-config>
 		<jsp-property-group>

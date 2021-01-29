@@ -83,6 +83,9 @@ public class Inscription extends HttpServlet {
 
 		try {
 			validationEmail( email );
+			
+			System.out.println();
+			
 		} catch (Exception e) {
 			erreurs.put(CHAMP_EMAIL, e.getMessage());
 		}
@@ -150,13 +153,13 @@ public class Inscription extends HttpServlet {
 	 
 	 private void validationNom( String nom ) throws Exception{
 		 if ( nom != null && nom.trim().length() < 3 ) {
-			 throw new Exception( "Le nom d'utilisateur doit contenir au moins 3 caractères." );
+			 throw new Exception( "Le Nom d'utilisateur doit contenir au moins 3 caractères." );
 		 }
 	 }
 	 
 	 private void validationPrenom( String prenom ) throws Exception{
 		 if ( prenom != null && prenom.trim().length() < 3 ) {
-			 throw new Exception( "Le nom d'utilisateur doit contenir au moins 3 caractères." );
+			 throw new Exception( "Le Prénom d'utilisateur doit contenir au moins 3 caractères." );
 
 		 }
 	 }

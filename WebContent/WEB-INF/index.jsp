@@ -66,9 +66,7 @@ request.setAttribute("s2", s2);
 										<span>E</span><span style="color: orange;">-BUY </span>
 									</h1>
 									<h2>The best e-shopppp!!!</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-										elit, sed do eiusmod tempor incididunt ut labore et dolore
-										magna aliqua.</p>
+									<p>OCEANIC OCEAF2D134B-Réfrigérateur-134L (95L + 39L)-2 portes-Congélateur haut-Froid statique-A+-L 48 x H 126,5 cm-Noir Brillant</p>
 									<button type="button" class="btn btn-default get">Get
 										it now</button>
 								</div>
@@ -85,9 +83,7 @@ request.setAttribute("s2", s2);
 										<span>E</span>-BUY
 									</h1>
 									<h2>The best e-shopppp!!!</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-										elit, sed do eiusmod tempor incididunt ut labore et dolore
-										magna aliqua.</p>
+									<p></p>
 									<button type="button" class="btn btn-default get">Get
 										it now</button>
 								</div>
@@ -105,9 +101,7 @@ request.setAttribute("s2", s2);
 										<span>E</span>-BUY
 									</h1>
 									<h2>The best e-shopppp!!!</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-										elit, sed do eiusmod tempor incididunt ut labore et dolore
-										magna aliqua.</p>
+									<p>Gamming!!!</p>
 									<button type="button" class="btn btn-default get">Get
 										it now</button>
 								</div>
@@ -124,9 +118,7 @@ request.setAttribute("s2", s2);
 										<span>E</span>-BUY
 									</h1>
 									<h2>The best e-shopppp!!!</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-										elit, sed do eiusmod tempor incididunt ut labore et dolore
-										magna aliqua.</p>
+									<p> PS5 DualSense Blanche/White - PlayStation Officiel</p>
 									<button type="button" class="btn btn-default get">Get
 										it now</button>
 								</div>
